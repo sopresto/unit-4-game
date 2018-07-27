@@ -1,64 +1,86 @@
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pick A Bandicoot</title>
+    <title>Bandicoot</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/reset.css">
-
 </head>
 
 <body>
-    <h1>Bandicoot Collector</h1>
 
-    <div id="container">
-        <p>You will be given a random number at the beginning of the game.</p>
-        <p>There are four Crash Bandicoot characters below. By clicking on a character you will add a specific amount of points
-            to your score.
-        </p>
-        <p>You win the game by matching your total score to a random number. You lose the game if your total score goes above
-            the random number.
-        </p>
-        <p>The value of each character is hidden from you until you click on it.</p>
-        <p>Each time the game starts the value of the characters will change.</p>
+    <h1 style="
+    font-family:cursive;
+    text-align: center;    
+    font-size: 100;
+    color: mediumspringgreen;
+    font-weight: bolder">Pick a Bandicoot</h1>
+
+    <center>
+        <div class="border" id="wholeGame">
+
+
+            <div id="directions">
+                <p class="para">You will be given a random number at the beginning of the game.</p>
+
+                <p class="para">There are four Crash Bandicoot characters below. By clicking on a character you will add a specific amount
+                    of points to your score.
+                </p>
+
+                <p class="para">You win the game by matching your total score to a random number. You lose the game if your total score goes
+                    above the random number.
+                </p>
+
+                <p class="para">The value of each character is hidden from you until you click on it.</p>
+
+                <p class="para">Each time the game starts the value of the characters will change.</p>
+            </div>
+
+            <div id="buttonsLeft">
+                <button>
+                    <img src="assets/images/crash1.jpg" height="150px" width="150px" alt="crash Bandicoot" name="bandicoot">
+                </button>
+                <button>
+                    <img src="assets/images/Coco1.jpeg" height="150px" width="150px" alt="crash Bandicoot" name="coco">
+                </button>
+            </div>
+            <div id="buttonRight">
+                <button>
+                    <img src="assets/images/crashandgang1.jpg" height="150px" width="150px" alt="crash Bandicoot" name="team">
+                </button>
+                <button>
+                    <img src="assets/images/tikihead1.jpg" height="150px" width="150px" alt="crash Bandicoot" name="tiki">
+                </button>
+            </div>
+
+            <div id="updates">
+                <div id="randomNumber">
+                    <span>Match This Number:</span>
+                    <p id="randoNum"></p>
+                </div>
+
+                <div id="userNumber">
+                    <span>Your Number:</span>
+                        <p id="totalScore"></p>
+    
+                </div>
+                <div id="winLoss">
+                    <span>Your Wins:
+                        <p id="wins"></p>
+                    </span>
+                    <span>Your Losses:
+                        <p id="losses"></p>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    </center>
+
     </div>
-
-    <button class="button"> 
-        <img src="assets/images/crash1.jpg" height="200px" width="200px" alt="crash Bandicoot" name="bandicoot">
-    </button>
-    <button class="button">
-        <img src="assets/images/Coco1.jpeg" height="200px" width="200px" alt="crash Bandicoot" name="coco">
-    </button>
-    <button class="button">
-        <img src="assets/images/crashandgang1.jpg" height="200px" width="200px" alt="crash Bandicoot" name="team">
-    </button>
-    <button class="button">
-        <img src="assets/images/tikihead1.jpg" height="200px" width="200px" alt="crash Bandicoot" name="tiki">
-    </button>
-
-    <!-- coco: characterCoco,
-    tiki: characterTikiHead,
-    team: characterTeam,
-    bandicoot: characterBandicoot, -->
-
-    <div id="scoreCount"></div>
-    <div id="randomNumber"></div>
-    <div id="totalScore">Your Total Score is:</div>
-    <div id="totalScoreBox"></div>
-    <div class="scoreTracker">
-      <p>Wins:<span id="wins"></span></p>
-       <p>Losses:<span id="losses"></span></p>
-    </div>
-
-
-
-
-
-
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/javascript/games.js"></script>
 </body>

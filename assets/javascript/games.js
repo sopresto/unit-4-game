@@ -9,7 +9,7 @@
 // //Game will (reset) including wins and losses and therefore characters begin with a new value and (randomNumber)
 // //has a new value.
 
-// // These are our global variables
+//Setting global varibles
 var characterBandicoot;
 var characterCoco;
 var characterTikiHead;
@@ -18,34 +18,15 @@ var wins = 0;
 var losses = 0;
 var totalSoFar;
 
+// // //The game begins with a random number displayed on screen.
+// // //users will need to match this random number in order to win if not they will lose.
 
-
-// //The game begins with a random number displayed on screen.
-// //users will need to match this random number in order to win if not they will lose.
+//global variable for random number
 var randomNumber;
-
-// //this will execute the reset function at the beginning of the game.
+//begin game with reset
 reset();
-
-
-// //these are our objects of which we will use to store values within these names.
+//global variable for characters
 var characters;
-
-
-
-// //User must click on a button to display score within totalScoreBox.
-// //this function will assign a random number to a button when clicked.
-// //Once a button has been clicked their value will be added to that of the other button.
-$('.button').on('click', function () {
-    totalSoFar += characters[event.target.name];
-    $('#totalScoreBox').text(totalSoFar);
-
-    winsLoss();
-})
-
-
-// //if the (totalSoFar === randomNumber) we will set a parameter that the user gains a point.
-// //if the totalSoFar =! randomNumber then the user will lose a point.
 
 function reset() {
     characterBandicoot = Math.floor(Math.random() * 12) + 1;
@@ -54,10 +35,12 @@ function reset() {
     characterTeam = Math.floor(Math.random() * 12) + 1;
 
     totalSoFar = 0;
-    $('#totalScoreBox').text(totalSoFar);
+    var divTotal = $('#totalScore').text(totalSoFar);
+    $("userNum").append(divTotal);
 
     randomNumber = Math.floor(Math.random() * 102) + 19;
-    $('#randomNumber').text(randomNumber);
+    var random = $('#randoNum').text(randomNumber);
+    $("randomNumber").append(random);
 
     characters = {
         coco: characterCoco,
@@ -68,26 +51,33 @@ function reset() {
 
 }
 
+// console.log(reset())
+
+// // //User must click on a button to display score within totalScoreBox.
+// // //this function will assign a random number to a button when clicked.
+// // //Once a button has been clicked their value will be added to that of the other button.
+$('button').on('click', function (event) {
+    totalSoFar += characters[event.target.name];
+    $('#totalScore').text(totalSoFar);
+
+    winsLoss();
+})
+
 function winsLoss() {
     var finalScore = randomNumber;
 
     if (totalSoFar === randomNumber) {
         wins++;
-        $('#wins').append(wins);
+        var addText = $("#wins").text(wins);
+        $('#wins').append(addText);
+        console.log('win')
         reset();
 
     } else if (totalSoFar > randomNumber) {
         losses++;
-        $('#losses').append(losses);
+        var addLoss = $("#losses").text(losses)
+        $('#losses').append(addLoss);
+        console.log('lose')
         reset();
     }
 }
-
-
-
-
-
-
-
-
-
